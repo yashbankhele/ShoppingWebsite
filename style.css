@@ -1,316 +1,40 @@
-/* Global Styles */
+/* Fixed CSS with Better Mobile View */
 :root {
-    --primary: #ff6b6b;
-    --secondary: #794afa;
-    --dark: #1e1e1e;
-    --light: #f8f9fa;
-    --gray: #6c757d;
+    --primary: #ff4757;
+    --secondary: #2f3542;
+    --light: #f1f2f6;
     --white: #ffffff;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background-color: var(--light);
-    color: var(--dark);
-    overflow-x: hidden;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.btn:hover {
-    background-color: #ff5252;
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-}
-
-/* Header Styles */
+/* Corrected Header Z-Index Issue */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    padding: 1rem 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     z-index: 1000;
-    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
 }
 
-header .logo h1 {
-    font-size: 2rem;
-    color: var(--dark);
-}
-
-header .logo h1 span {
-    color: var(--primary);
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-}
-
-header nav ul li {
-    margin: 0 1rem;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: var(--dark);
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: var(--primary);
-}
-
-header .icons i {
-    font-size: 1.5rem;
-    margin-left: 1.5rem;
-    cursor: pointer;
-    color: var(--dark);
-    transition: all 0.3s ease;
-}
-
-header .icons i:hover {
-    color: var(--primary);
-}
-
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
-    background-size: cover;
-    background-position: center;
-    padding: 0 7%;
-}
-
-.hero .content {
-    max-width: 50rem;
-}
-
-.hero .content h3 {
-    font-size: 2rem;
-    color: var(--white);
-    margin-bottom: 1rem;
-}
-
-.hero .content h1 {
-    font-size: 4rem;
-    color: var(--white);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.hero .content p {
-    font-size: 1.2rem;
-    color: var(--white);
-    margin-bottom: 2rem;
-}
-
-/* Products Section */
-.products {
-    padding: 5rem 7%;
-    background: var(--white);
-}
-
-.heading {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-}
-
-.heading span {
-    color: var(--primary);
-}
-
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
+/* Fixed Product Card Overflow */
 .product-card {
-    background: var(--light);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    overflow: visible; /* Changed from hidden */
 }
 
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.product-image {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-}
-
+/* Responsive Images */
 .product-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.3s ease;
+    height: auto; /* Fixed aspect ratio */
 }
 
-.product-card:hover .product-image img {
-    transform: scale(1.1);
-}
-
-.product-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--primary);
-    color: var(--white);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-}
-
-.product-content {
-    padding: 1.5rem;
-}
-
-.product-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.price {
-    font-size: 1.2rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-.price span {
-    color: var(--gray);
-    text-decoration: line-through;
-    font-size: 0.9rem;
-    margin-left: 5px;
-}
-
-.stars {
-    color: #ffc107;
-    margin-bottom: 1rem;
-}
-
-/* Free Resources Section */
-.resources {
-    padding: 3rem 7%;
-    background: var(--light);
-    text-align: center;
-}
-
-.resources h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-.resource-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.resource-links a {
-    display: inline-block;
-    padding: 10px 20px;
-    background: var(--secondary);
-    color: var(--white);
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.resource-links a:hover {
-    background: var(--primary);
-    transform: translateY(-5px);
-}
-
-/* Responsive Design */
-@media (max-width: 991px) {
-    header {
-        padding: 1rem 3%;
-    }
-    
-    .hero, .products, .resources {
-        padding: 5rem 3%;
-    }
-}
-
+/* Mobile Menu Fix */
 @media (max-width: 768px) {
-    header nav {
+    #navbar {
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
-        right: 0;
-        background: var(--white);
-        padding: 1rem;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: all 0.3s ease;
+        width: 100%;
     }
     
-    header nav.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    
-    header nav ul {
+    #navbar.active {
         display: block;
-    }
-    
-    header nav ul li {
-        margin: 1rem 0;
-    }
-    
-    .hero .content h1 {
-        font-size: 3rem;
-    }
-    
-    .resource-links {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 450px) {
-    html {
-        font-size: 14px;
-    }
-    
-    .hero .content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .product-container {
-        grid-template-columns: 1fr;
     }
 }
