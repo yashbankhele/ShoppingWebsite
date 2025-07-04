@@ -1,40 +1,33 @@
-/* Fixed CSS with Better Mobile View */
-:root {
-    --primary: #ff4757;
-    --secondary: #2f3542;
-    --light: #f1f2f6;
-    --white: #ffffff;
+/* style.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Corrected Header Z-Index Issue */
-header {
-    z-index: 1000;
-    position: fixed;
-    width: 100%;
+.hero {
+  height: 90vh;
+  background: url('https://source.unsplash.com/1200x800/?crafts,handmade') no-repeat center center/cover;
+  position: relative;
 }
 
-/* Fixed Product Card Overflow */
-.product-card {
-    overflow: visible; /* Changed from hidden */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
 }
 
-/* Responsive Images */
-.product-image img {
-    width: 100%;
-    height: auto; /* Fixed aspect ratio */
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
-/* Mobile Menu Fix */
-@media (max-width: 768px) {
-    #navbar {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-    }
-    
-    #navbar.active {
-        display: block;
-    }
+.card img {
+  height: 250px;
+  object-fit: cover;
 }
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
