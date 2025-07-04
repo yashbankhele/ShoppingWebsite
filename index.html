@@ -1,24 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A message to pass</title>
+    <title>UrbanStyle - Modern Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="container">
-        <h1>A Message You Would Like To Pass</h1>
-        <input type="text" value="">
-        <div class="btn">Submit</div>
-        <p class="error">Please enter a value to pass</p>
-        <h3>Last Message Delivered...!</h3>
-        <p class="message"></p>
-    </div>
-    <script src="index.js"></script>
-</body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Urban<span>Style</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-shopping-cart" id="cart-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <h3>Winter Collection</h3>
+            <h1>New Arrivals 2024</h1>
+            <p>Get 30% off on all new products</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h1 class="heading">Featured <span>Products</span></h1>
+        
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Smart Watch">
+                    <div class="product-badge">New</div>
+                </div>
+                <div class="product-content">
+                    <h3>Smart Watch Pro</h3>
+                    <div class="price">₹4,999 <span>₹6,999</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Running Shoes">
+                </div>
+                <div class="product-content">
+                    <h3>Running Shoes</h3>
+                    <div class="price">₹2,499 <span>₹3,999</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wireless Headphones">
+                    <div class="product-badge">-25%</div>
+                </div>
+                <div class="product-content">
+                    <h3>Wireless Headphones</h3>
+                    <div class="price">₹1,799 <span>₹2,399</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Image Resources Section -->
+    <section class="resources">
+        <h2>Free Image Resources</h2>
+        <div class="resource-links">
+            <a href="https://unsplash.com" target="_blank">Unsplash</a>
+            <a href="https://pixabay.com" target="_blank">Pixabay</a>
+            <a href="https://pexels.com" target="_blank">Pexels</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
 </html>
