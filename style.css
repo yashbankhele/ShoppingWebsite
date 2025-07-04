@@ -51,42 +51,42 @@ footer p {
 }
 
 
-/* Custom Navbar Styling */
+/* Custom Stylish Navbar */
 .custom-navbar {
-  background: linear-gradient(135deg, #1d1d1d, #3a3a3a);
+  background: linear-gradient(90deg, #141e30, #243b55); /* Blueish Gradient */
   padding: 12px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-}
-
-.custom-navbar .nav-link {
-  color: #fff !important;
-  margin: 0 12px;
-  font-weight: 500;
-  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
 
-.custom-navbar .nav-link:hover {
+.custom-navbar .navbar-brand {
   color: #f9c74f !important;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.custom-navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin-left: 15px;
+  position: relative;
 }
 
 .custom-navbar .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -4px;
   left: 0;
-  background-color: #f9c74f;
-  transition: width 0.3s ease;
+  bottom: -5px;
+  background: #f9c74f;
+  transition: 0.4s;
 }
 
 .custom-navbar .nav-link:hover::after {
   width: 100%;
 }
 
-.navbar-toggler {
-  border: none;
-  font-size: 1.5rem;
+.custom-navbar .nav-link:hover {
+  color: #f9c74f !important;
 }
-
