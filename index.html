@@ -3,15 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Webpage</title>
+    <title>My Awesome Shopping Site</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1 id="myHeading">Hello World!</h1>
-        <button id="myButton">Click Me!</button>
-    </div>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">ShopVista</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <h2>Discover Amazing Products!</h2>
+            <p>High quality items at unbeatable prices.</p>
+            <button class="shop-now-btn">Shop Now</button>
+        </section>
+
+        <section class="products-section">
+            <h2>Our Products</h2>
+            <div class="product-grid" id="product-grid">
+                </div>
+        </section>
+
+        <aside class="cart-sidebar" id="cart-sidebar">
+            <h3>Your Cart</h3>
+            <ul id="cart-items">
+                </ul>
+            <p class="cart-total">Total: $<span id="cart-total">0.00</span></p>
+            <button class="checkout-btn">Checkout</button>
+            <button class="clear-cart-btn">Clear Cart</button>
+        </aside>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 ShopVista. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
