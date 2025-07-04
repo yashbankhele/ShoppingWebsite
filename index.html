@@ -1,90 +1,95 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UrbanStyle - Modern Shopping</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>CraftCulture - Handmade Treasures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header (Fixed Navigation) -->
-    <header>
-        <div class="logo">
-            <h1>Urban<span>Style</span></h1>
-        </div>
-        <nav id="navbar">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#">Offers</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="icons">
-            <i class="fas fa-search"></i>
-            <i class="fas fa-shopping-cart"></i>
-            <i class="fas fa-user"></i>
-            <i class="fas fa-bars" id="menu-btn"></i>
-        </div>
-    </header>
 
-    <!-- Hero Section (Optimized) -->
-    <section class="hero">
-        <div class="content">
-            <h3>Winter Sale</h3>
-            <h1>New Collection 2024</h1>
-            <p>Get 50% Off on First Order</p>
-            <a href="#products" class="btn">Shop Now</a>
-        </div>
-    </section>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">CraftCulture</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Products Section (Fixed Structure) -->
-    <section class="products" id="products">
-        <h1 class="heading">Our <span>Products</span></h1>
-        
-        <div class="product-container">
-            <!-- Product 1 (Corrected) -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Smart Watch" loading="lazy">
-                    <div class="product-badge">-30%</div>
-                </div>
-                <div class="product-content">
-                    <h3>Smart Watch Pro</h3>
-                    <div class="price">₹4,999 <span>₹6,999</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="btn add-to-cart">Add to Cart</button>
-                </div>
+  <!-- Hero Section -->
+  <header class="hero text-white text-center d-flex align-items-center">
+    <div class="container">
+      <h1 class="display-4">Discover Handmade Wonders</h1>
+      <p class="lead">Unique, beautiful, and crafted with love</p>
+      <a href="#products" class="btn btn-warning mt-3">Shop Now</a>
+    </div>
+  </header>
+
+  <!-- Products Section -->
+  <section class="py-5" id="products">
+    <div class="container">
+      <h2 class="text-center mb-4">Featured Products</h2>
+      <div class="row g-4">
+        <!-- Product Card -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://source.unsplash.com/300x300/?handmade,craft" class="card-img-top" alt="Product">
+            <div class="card-body text-center">
+              <h5 class="card-title">Woven Basket</h5>
+              <p class="card-text">₹499</p>
+              <button class="btn btn-primary add-to-cart">Add to Cart</button>
             </div>
-
-            <!-- Product 2 (Corrected) -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Running Shoes" loading="lazy">
-                </div>
-                <div class="product-content">
-                    <h3>Running Shoes</h3>
-                    <div class="price">₹2,499 <span>₹3,999</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="btn add-to-cart">Add to Cart</button>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+        <!-- Repeat for more products -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://source.unsplash.com/300x300/?handmade,gift" class="card-img-top" alt="Product">
+            <div class="card-body text-center">
+              <h5 class="card-title">Handmade Gift Box</h5>
+              <p class="card-text">₹799</p>
+              <button class="btn btn-primary add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <!-- Third product -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://source.unsplash.com/300x300/?craft,diy" class="card-img-top" alt="Product">
+            <div class="card-body text-center">
+              <h5 class="card-title">DIY Kit</h5>
+              <p class="card-text">₹299</p>
+              <button class="btn btn-primary add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3 text-center">
+    <p>&copy; 2025 CraftCulture | All Rights Reserved</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
