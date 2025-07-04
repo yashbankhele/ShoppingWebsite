@@ -1,34 +1,12 @@
-// Toggle mobile menu
-document.getElementById('menu-btn').addEventListener('click', () => {
-    document.querySelector('header nav').classList.toggle('active');
+// Fixed Mobile Menu Toggle
+document.getElementById('menu-btn').addEventListener('click', function() {
+    document.getElementById('navbar').classList.toggle('active');
 });
 
-// Product hover effect
-document.querySelectorAll('.product-card').forEach(product => {
-    product.addEventListener('mouseenter', () => {
-        product.querySelector('.product-image img').style.transform = 'scale(1.1)';
-    });
-    
-    product.addEventListener('mouseleave', () => {
-        product.querySelector('.product-image img').style.transform = 'scale(1)';
-    });
-});
-
-// Add to cart functionality
-document.querySelectorAll('.btn').forEach(button => {
-    if (button.textContent === 'Add to Cart') {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            const productName = button.closest('.product-content').querySelector('h3').textContent;
-            alert(`${productName} added to cart!`);
-        });
-    }
-});
-
-// Free resource links
-document.querySelectorAll('.resource-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.open(link.href, '_blank');
+// Working Add to Cart Function
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        const productName = this.closest('.product-content').querySelector('h3').textContent;
+        alert(`${productName} added to cart successfully!`);
     });
 });
