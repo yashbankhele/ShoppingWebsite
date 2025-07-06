@@ -108,6 +108,12 @@ footer {
   font-style: italic;
 }
 
+footer::before {
+  content: "Powered by Yash Bankhele | ";
+  font-weight: 600;
+  color: #7f00ff;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
