@@ -28,6 +28,16 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.8s ease-in-out;
 }
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  max-width: 420px;
+  width: 100%;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
 /* Heading */
 .main-heading {
