@@ -1,23 +1,25 @@
+const apiKey = "3393c0a44d7eb4e00aec76f65d2b8d99";
+
 async function getWeather() {
   const city = document.getElementById("cityInput").value;
-  const apiKey = "3393c0a44d7eb4e00aec76f65d2b8d99"; // Teri OpenWeatherMap API key
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  const res = await fetch(url);
-  const data = await res.json();
+  try {
+    const response = await fetch(apiURL);
+    if (!response.ok) {
+      throw new Error("City not found or API error.");
+    }
 
-  if (data.cod === 200) {
-    const iconCode = data.weather[0].icon;
+    const data = await response.json();
+
     document.getElementById("weatherCard").classList.remove("hidden");
-    document.getElementById("weatherCard").style.opacity = 1;
-    document.getElementById("cityName").innerText = `${data.name}, ${data.sys.country}`;
-    document.getElementById("weatherIcon").src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-    document.getElementById("temperature").innerText = `🌡️ ${data.main.temp}°C`;
-    document.getElementById("description").innerText = `⛅ ${data.weather[0].main} - ${data.weather[0].description}`;
-    document.getElementById("humidity").innerText = `💧 Humidity: ${data.main.humidity}%`;
-    document.getElementById("wind").innerText = `💨 Wind: ${data.wind.speed} m/s`;
-  } else {
-    document.getElementById("weatherCard").classList.add("hidden");
-    alert("❌ City not found. Please try again.");
+    document.getElementById("cityName").textContent = data.name;
+    document.getElementById("weatherIcon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    document.getElementById("temperature").textContent = `🌡️ Temperature: ${data.main.temp}°C`;
+    document.getElementById("description").textContent = `☁️ Weather: ${data.weather[0].description}`;
+    document.getElementById("humidity").textContent = `💧 Humidity: ${data.main.humidity}%`;
+    document.getElementById("wind").textContent = `💨 Wind: ${data.wind.speed} m/s`;
+  } catch (error) {
+    alert("❌ Error: " + error.message);
   }
 }
