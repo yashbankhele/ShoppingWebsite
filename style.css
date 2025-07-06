@@ -5,110 +5,111 @@
   box-sizing: border-box;
 }
 
+/* Body & Background Gradient */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #232526, #414345); /* Dark Gray Gradient */
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 50%, #11998e 100%);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #e0e0e0;
+  color: #f5f5f5;
 }
 
+/* Main Container */
 .container {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
-  border-radius: 18px;
-  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 32px;
   width: 90%;
-  max-width: 420px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  max-width: 400px;
   text-align: center;
-  animation: fadeIn 1s ease-in;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease-in-out;
 }
 
+/* Heading */
 .main-heading {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 26px;
-  margin-bottom: 25px;
-  color: #00ffd5;
-  text-shadow: 0 0 12px #00ffd5;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
+/* Author Name Styling */
 .author-name {
-  color: #ffc107;
-  font-weight: bold;
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 1px;
+  color: #ffd700;
+  font-weight: 600;
 }
 
+/* Search Box */
 .search-box {
   display: flex;
-  gap: 10px;
-  margin-bottom: 25px;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
 input {
   flex: 1;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 8px;
   border: none;
-  font-size: 16px;
-  background: #f0f0f0;
+  font-size: 15px;
   color: #333;
-  outline: none;
 }
 
 button {
-  padding: 12px 18px;
+  padding: 10px 16px;
   border: none;
-  border-radius: 10px;
-  background-color: #00ffd5;
-  color: #1a1a1a;
-  font-weight: bold;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #11998e;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
+  transition: transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #39ffdb;
-  box-shadow: 0 0 12px #00ffd5;
+  transform: translateY(-2px);
 }
 
+/* Weather Card Reveal */
 .weather-card {
-  animation: slideUp 0.6s ease forwards;
   opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.5s ease-out forwards;
 }
 
 .weather-card img {
-  width: 90px;
-  margin: 10px 0;
+  width: 80px;
+  margin: 12px 0;
 }
 
 .weather-card p {
-  font-size: 16px;
-  margin: 6px 0;
+  font-size: 15px;
+  margin: 4px 0;
+  color: #e0e0e0;
 }
 
+/* Hidden state */
 .hidden {
   display: none;
 }
 
+/* Footer */
 footer {
-  margin-top: 30px;
-  font-size: 14px;
-  opacity: 0.85;
-  color: #ccc;
-  font-style: italic;
+  margin-top: 28px;
+  font-size: 13px;
+  color: #cccccc;
 }
 
+/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
