@@ -2,59 +2,74 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #74ebd5, #9face6);
+  background: linear-gradient(to right, #1d4350, #a43931);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.app-container {
-  background: white;
+.container {
+  background: rgba(255, 255, 255, 0.1);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 400px;
+  color: white;
   text-align: center;
-  width: 320px;
+  animation: fadeIn 1s ease;
 }
 
 h1 {
-  margin-bottom: 25px;
-  color: #333;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.shrish {
+  color: #ffd700;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .search-box {
   display: flex;
-  justify-content: center;
   gap: 10px;
   margin-bottom: 25px;
 }
 
 input {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ddd;
+  flex: 1;
+  padding: 12px;
+  border: none;
   border-radius: 8px;
-  width: 160px;
+  font-size: 16px;
 }
 
 button {
-  padding: 10px 15px;
-  font-size: 16px;
-  background-color: #0066ff;
-  color: white;
+  padding: 12px 20px;
   border: none;
+  background: #ff4e50;
+  color: white;
   border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #e63946;
 }
 
 .weather-card {
-  transition: all 0.3s ease;
+  animation: slideUp 0.5s ease forwards;
 }
 
 .weather-card img {
   width: 80px;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .weather-card p {
@@ -64,4 +79,20 @@ button {
 
 .hidden {
   display: none;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
