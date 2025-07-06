@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Live Weather App</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>🌦️ Shrish Bhai Weather</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="app-container">
-    <h1>🌤️ Weather Forecast</h1>
+  <div class="container">
+    <h1>🌤️ Weather by <span class="shrish">Shrish Bhai</span></h1>
     <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <input type="text" id="cityInput" placeholder="Enter city..." />
       <button onclick="getWeather()">Search</button>
     </div>
     <div id="weatherCard" class="weather-card hidden">
       <h2 id="cityName"></h2>
-      <img id="weatherIcon" src="" alt="Weather Icon" />
+      <img id="weatherIcon" src="" alt="Icon" />
       <p id="temperature"></p>
-      <p id="weatherDesc"></p>
+      <p id="description"></p>
       <p id="humidity"></p>
+      <p id="wind"></p>
     </div>
+    <footer>⚡ Built with ❤️ by <b>Shrish Bhai</b></footer>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
+
