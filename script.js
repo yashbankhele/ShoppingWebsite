@@ -1,28 +1,37 @@
-const apiKey = "3393c0a44d7eb4e00aec76f65d2b8d99";
-
 async function getWeather() {
-  const city = "London"; // Hardcoded for test
-  const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const city = document.getElementById("cityInput").value.trim();
+
+  if (!city) {
+    alert("⚠️ Please enter a city name.");
+    return;
+  }
 
   try {
-    const response = await fetch(apiURL);
-    const data = await response.json();
-    console.log(data);
+    // Step 1: Get WOEID
+    const locationRes = await fetch(`https://www.metaweather.com/api/location/search/?query=${city}`);
+    const locationData = await locationRes.json();
 
-    if (data.cod !== 200) {
-      alert(`❌ Error: ${data.message}`);
+    if (locationData.length === 0) {
+      alert("❌ City not found.");
       return;
     }
 
-    document.getElementById("weatherCard").classList.remove("hidden");
-    document.getElementById("cityName").textContent = data.name;
-    document.getElementById("weatherIcon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    document.getElementById("temperature").textContent = `🌡️ Temperature: ${data.main.temp}°C`;
-    document.getElementById("description").textContent = `☁️ Weather: ${data.weather[0].description}`;
-    document.getElementById("humidity").textContent = `💧 Humidity: ${data.main.humidity}%`;
-    document.getElementById("wind").textContent = `💨 Wind: ${data.wind.speed} m/s`;
+    const woeid = locationData[0].woeid;
 
+    // Step 2: Get Weather by WOEID
+    const weatherRes = await fetch(`https://www.metaweather.com/api/location/${woeid}/`);
+    const weatherData = await weatherRes.json();
+    const today = weatherData.consolidated_weather[0];
+
+    // Step 3: Show Results
+    document.getElementById("weatherCard").classList.remove("hidden");
+    document.getElementById("cityName").textContent = weatherData.title;
+    document.getElementById("weatherIcon").src = `https://www.metaweather.com/static/img/weather/png/${today.weather_state_abbr}.png`;
+    document.getElementById("temperature").textContent = `🌡️ Temp: ${Math.round(today.the_temp)}°C`;
+    document.getElementById("description").textContent = `☁️ State: ${today.weather_state_name}`;
+    document.getElementById("humidity").textContent = `💧 Humidity: ${today.humidity}%`;
+    document.getElementById("wind").textContent = `💨 Wind: ${Math.round(today.wind_speed)} km/h`;
   } catch (error) {
-    alert("❌ Fetch error: " + error.message);
+    alert("❌ Something went wrong: " + error.message);
   }
 }
