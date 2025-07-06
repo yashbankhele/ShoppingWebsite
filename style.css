@@ -119,7 +119,7 @@ footer {
 }
 
 footer::before {
-  content: "Powered by Yash Bankhele | ";
+  content: "Powered by Yash Bankhele ";
   font-weight: 600;
   color: #7f00ff;
 }
