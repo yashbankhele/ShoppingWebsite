@@ -8,17 +8,17 @@
 /* Body & Background Gradient */
 body {
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 50%, #11998e 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #d3bfff 50%, #7f00ff 100%);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f5f5f5;
+  color: #333333;
 }
 
 /* Main Container */
 .container {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 32px;
@@ -33,12 +33,12 @@ body {
 .main-heading {
   font-size: 22px;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #7f00ff;
 }
 
 /* Author Name Styling */
 .author-name {
-  color: #ffd700;
+  color: #9b59b6;
   font-weight: 600;
 }
 
@@ -55,22 +55,26 @@ input {
   border-radius: 8px;
   border: none;
   font-size: 15px;
+  background: #f0f0f0;
   color: #333;
+  outline: none;
 }
 
 button {
   padding: 10px 16px;
   border: none;
   border-radius: 8px;
-  background-color: #ffffff;
-  color: #11998e;
+  background-color: #7f00ff;
+  color: #ffffff;
   font-weight: 500;
   cursor: pointer;
   transition: transform 0.2s ease;
+  font-family: 'Roboto', sans-serif;
 }
 
 button:hover {
   transform: translateY(-2px);
+  background-color: #9b59b6;
 }
 
 /* Weather Card Reveal */
@@ -88,7 +92,7 @@ button:hover {
 .weather-card p {
   font-size: 15px;
   margin: 4px 0;
-  color: #e0e0e0;
+  color: #444;
 }
 
 /* Hidden state */
@@ -100,7 +104,8 @@ button:hover {
 footer {
   margin-top: 28px;
   font-size: 13px;
-  color: #cccccc;
+  color: #666;
+  font-style: italic;
 }
 
 /* Animations */
@@ -112,4 +117,3 @@ footer {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
